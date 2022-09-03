@@ -1,0 +1,341 @@
+* {
+  box-sizing: border-box;
+  /* outline: solid 2px blue; */
+}
+
+:root {
+  font-size: 14px;
+}
+
+.container-score{
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.container {
+  position: absolute;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "enemi"
+    "player";
+}
+
+.container .enemi-side {
+  background-color: rgb(54, 7, 82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: enemi;
+}
+
+.container .enemi-side .btn-container {
+  height: 70px;
+  width: 250px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: white;
+}
+
+.container .enemi-side .btn-container .dark-mode-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: black;
+  order: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.container .enemi-side .btn-container .surender-btn {
+  width: 70px;
+  height: 50%;
+  border-radius: 5px;
+  outline: white 1px solid;
+  order: 1;
+  color: black;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .enemi-side .img-kartu-enemi,
+.container .player-side .img-kartu-player {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95%;
+  width: 20%;
+}
+
+.container .enemi-side .img-kartu-enemi .img-batu {
+  /* outline: solid 2px red; */
+  display: block;
+  background-image: url(img/batu.png);
+  height: 60%;
+  width: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.container .enemi-side .img-kartu-enemi .img-gunting {
+  /* outline: solid 2px red; */
+  display: none;
+  background-image: url(img/gunting.png);
+  height: 60%;
+  width: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.container .enemi-side .img-kartu-enemi .img-kertas {
+  /* outline: solid 2px red; */
+  display: none;
+  background-image: url(img/kertas.png);
+  height: 60%;
+  width: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+
+.container .player-side {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: player;
+}
+
+.container .player-side .img-kartu-player .player-batu {
+  /* outline: solid 2px red; */
+  display: block;
+  background-image: url(img/batu.png);
+  height: 60%;
+  width: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container .player-side .img-kartu-player .player-gunting {
+  /* outline: solid 2px red; */
+  display: none;
+  background-image: url(img/gunting.png);
+  height: 60%;
+  width: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container .player-side .img-kartu-player .player-kertas {
+  /* outline: solid 2px red; */
+  display: none;
+  background-image: url(img/kertas.png);
+  height: 60%;
+  width: 70%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.container .player-side .kartu-pilihan {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  height: 40%;
+  background-color: rgb(255, 255, 255, .1);
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+}
+
+.container .player-side .kartu-pilihan .batu {
+  background-image: url(img/batu.png);
+  width: 90%;
+  height: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  /* outline: solid 2px red; */
+}
+
+.container .player-side .kartu-pilihan .gunting {
+  background-image: url(img/gunting.png);
+  width: 90%;
+  height: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.container .player-side .kartu-pilihan .kertas {
+  background-image: url(img/kertas.png);
+  width: 90%;
+  height: 30%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+  .container .enemi-side .btn-container {
+    width: 70px;
+    height: 250px;
+    flex-direction: column;
+  }
+
+  .container .player-side .kartu-pilihan {
+    width: 70px;
+  }
+
+  .container .enemi-side .img-kartu-enemi,
+  .container .player-side .img-kartu-player {
+    height: 55%;
+  }
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

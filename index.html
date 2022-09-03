@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>batu-gunting-kertas</title>
+</head>
+<body>
+  <div class="container">
+    <div class="enemi-side">
+      <div class="img-kartu-enemi">
+        <div class="img-batu"></div>
+        <div class="img-gunting"></div>
+        <div class="img-kertas"></div>
+      </div>
+      <div class="btn-container">
+        <!-- <div class="dark-mode-btn">dark<br> mode</div> -->
+        <div class="surender-btn" style="color: white;">score</div>
+      </div>
+    </div>
+    <div class="player-side">
+      <div class="img-kartu-player">
+        <div class="player-batu"></div>
+        <div class="player-gunting"></div>
+        <div class="player-kertas"></div>
+      </div>
+      <div class="kartu-pilihan">
+        <div class="batu"></div>
+        <div class="gunting"></div>
+        <div class="kertas"></div>
+      </div>
+    </div>
+
+    <div 
+    class="container-score" 
+    style="
+      height: 100vh; 
+      width: 100vw;
+      color: white;
+      background-color: black;
+      text-align: center;
+      font-size: 4vw;
+      ">
+      <div style="margin:100px 0 50px 0 ;">
+        <h1 style="margin-bottom: 10px;">ENEMI</h1>
+        <p class="enemi-point">0</p>
+      </div>
+      <div style="margin-bottom: 100px;">
+        <h1 style="margin-bottom: 10px;">PLAYER</h1>
+        <p class="player-point">0</p>
+      </div>
+      <div 
+      class="back-btn" 
+      style="
+        background-color: white; 
+        color: black; 
+        outline: 2px solid rgb(95, 95, 95); 
+        padding: 10px 0; 
+        cursor: pointer;
+        ">back</div>
+    </div>
+  <script src="main.js"></script>
+</body>
+</html>
